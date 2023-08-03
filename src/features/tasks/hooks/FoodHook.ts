@@ -21,7 +21,7 @@ export const useFoodsAction = (): useFoodActionType => {
     ): void => {
         const lastData = foods[foods.length - 1]
         const newFood: List = {
-            id: lastData.id + 1,
+            id: lastData?.id ? lastData.id + 1 : 1,
             name,
             calories,
         }
